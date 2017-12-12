@@ -1,12 +1,24 @@
 
 $(document).ready(function() {
 	
-	$('#addAnimal').on('click', animalFunctions.moreAnimal);
+	$('#addAnimal').on('click', function() {
+		if(!$('#animal-input').val().trim()) {
+		    return false;
+		}
+		else {
+			animalFunctions.moreAnimal();
+		}
+	});
 	$('#animal-input').bind('keyup', function (e) {
 		 var key = e.which;
 		 if(key == 13)  // the enter key code
 		  {
-		    $('#addAnimal').click(); 
+		    if(!$('#animal-input').val().trim()) {
+		    	return false;
+		    }
+		    else {
+		    	$('#addAnimal').click(); 
+			}
 		  }
 		});  
 	// $('.animals').on('click', animalFunctions.printAnimal);
