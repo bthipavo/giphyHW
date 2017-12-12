@@ -71,7 +71,11 @@ var animalFunctions = {
 				// Creating and storing an image tag
 				var animalImage = $("<img>");
 				// Setting the src attribute of the image to a property pulled off the result item
-				animalImage.attr("src", results[i].images.fixed_height.url);
+				animalImage.attr("src", results[i].images.fixed_height_still.url);
+				animalImage.attr("data-state", "still");
+				animalImage.attr("data-still", results[i].images.fixed_height_still.url);
+				animalImage.attr("data-animate", results[i].images.fixed_height.url )
+				animalImage.on('click', animalFunctions.animateAnimal);
 
 				// Appending the paragraph and image tag to the animalDiv
 				animalDiv.append(p);
@@ -83,6 +87,22 @@ var animalFunctions = {
 
 
 		});
+	},
+
+	animateAnimal: function() {
+		console.log('running animals');
+		var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      	if (state === "still") {
+	        $(this).attr("src", $(this).attr("data-animate"));
+	        $(this).attr("data-state", "animate");
+      } else {
+	        $(this).attr("src", $(this).attr("data-still"));
+	        $(this).attr("data-state", "still");
+      }
+
 	}
 };
 
