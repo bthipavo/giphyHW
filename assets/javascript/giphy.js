@@ -26,6 +26,7 @@ var animalFunctions = {
 		for (var i = 0; i<animalArray.length; i++) {
 			var animalDiv = $("<button>");
 			animalDiv.attr('id', animalArray[i]);
+			animalDiv.attr('class', "btn btn-primary")
 			animalDiv.text(animalArray[i]);
 			animalDiv.on('click', animalFunctions.printAnimal);
 			animalButtons.append(animalDiv);
@@ -72,6 +73,7 @@ var animalFunctions = {
 				// Creating and storing an image tag
 				var animalImage = $("<img>");
 				// Setting the src attribute of the image to a property pulled off the result item
+				animalDiv.attr("class", "animal");
 				animalImage.attr("src", results[i].images.fixed_height_still.url);
 				animalImage.attr("data-state", "still");
 				animalImage.attr("data-still", results[i].images.fixed_height_still.url);

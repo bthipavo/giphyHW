@@ -1,0 +1,12 @@
+button {
+	margin-left: 10px;
+}
+
+.animal {
+	float: left;
+	padding: 10px;
+}
+
+#animal-form {
+	float: right;
+}
