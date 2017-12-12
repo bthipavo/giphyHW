@@ -47,6 +47,7 @@ var animalFunctions = {
 	},
 
 	printAnimal: function() {
+		$('#results').empty();
 		console.log("animal name " + this.id);
 		var animal = this.id;
 
