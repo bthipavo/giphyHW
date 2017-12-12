@@ -1,5 +1,7 @@
 button {
 	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px
 }
 
 .animal {
@@ -9,4 +11,10 @@ button {
 
 #animal-form {
 	float: right;
+	margin-right: 25px;
+}
+
+#animal-input {
+	width: 300px;
+	margin-bottom: 10px;
 }
